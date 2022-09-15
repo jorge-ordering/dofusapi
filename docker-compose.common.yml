@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234567890
+      - POSTGRES_DB=dofusapi
+    ports:
+      - 54329:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - dofus_network
+networks:
+  dofus_network:
+    name: dofus_network
+volumes:
+  pgdata:
