@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  dofusapi:
+    image: dofus_api_dev
+    build:
+      dockerfile: ./docker/dev/api.Dockerfile
+    working_dir: /var/www/api
+    environment:
+      DEBUG: 1
+    volumes:
+      - .:/var/www/api
+    ports:
+      - 8181:80
+    networks:
+      - dofus_network
+networks:
+  dofus_network:
+    name: dofus_network
