@@ -7,6 +7,10 @@ services:
     working_dir: /var/www/api
     environment:
       DEBUG: 1
+      DATABASE_HOST: postgres
+      DATABASE_NAME: dofusapi
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: "1234567890"
     volumes:
       - .:/var/www/api
     ports:
